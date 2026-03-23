@@ -1,0 +1,82 @@
+{
+  "info": {
+    "_postman_id": "70d0c4ef-136b-468a-881d-a7565f89d6b2",
+    "name": "core-banking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36456489"
+  },
+  "item": [
+    {
+      "name": "CREDIT",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Idempotency-Key",
+            "value": "{{$randomUUID}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"accountId\": \"419a2df1-e289-4fdc-ac2f-62af197585d4\",\n  \"type\": \"CREDIT\",\n  \"amount\": {\n    \"value\": 50,\n    \"currency\": \"BRL\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "transactions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DEBIT",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Idempotency-Key",
+            "value": "{{$randomUUID}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"accountId\": \"419a2df1-e289-4fdc-ac2f-62af197585d4\",\n  \"type\": \"DEBIT\",\n  \"amount\": {\n    \"value\": 100,\n    \"currency\": \"BRL\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "transactions"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

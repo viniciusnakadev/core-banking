@@ -168,7 +168,6 @@ Start dependencies:
 ```bash
 docker compose up -d
 
-```bash
 ./mvnw quarkus:dev
 ./mvnw clean test
 ```
